@@ -21,6 +21,12 @@ export default function GalleryPage() {
             href="/"
             className="px-3 py-1.5 rounded-full text-sm font-semibold text-white hover:bg-white/20 transition-all"
           >
+            Home
+          </Link>
+          <Link
+            href="/create"
+            className="px-3 py-1.5 rounded-full text-sm font-semibold text-white hover:bg-white/20 transition-all"
+          >
             Create
           </Link>
           <span className="px-3 py-1.5 rounded-full text-sm font-semibold bg-white text-purple-700">
@@ -41,7 +47,7 @@ export default function GalleryPage() {
             <p className="text-lg font-semibold">No games yet!</p>
             <p className="text-sm mt-1 mb-4">Be the first to create one.</p>
             <Link
-              href="/"
+              href="/create"
               className="px-6 py-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold rounded-xl transition-all inline-block"
             >
               Create a Game

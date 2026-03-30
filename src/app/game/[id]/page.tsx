@@ -141,7 +141,7 @@ export default function GamePage({ params }: PageProps) {
               ✏️ Improve this game
             </button>
             <Link
-              href="/"
+              href="/create"
               className="px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 text-white font-semibold text-sm transition-all"
             >
               + New Game
