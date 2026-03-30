@@ -1,0 +1,21 @@
+# CODEOWNERS — routes PR review requests by directory
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default: all changes reviewed by repo owner
+*                           @camjaywilson
+
+# Frontend / UI
+/src/app/                   @camjaywilson
+/src/components/            @camjaywilson
+
+# Backend / API routes
+/src/app/api/               @camjaywilson
+
+# Data layer
+/src/lib/                   @camjaywilson
+/data/                      @camjaywilson
+
+# CI/CD and config
+/.github/                   @camjaywilson
+/package.json               @camjaywilson
+/next.config.mjs            @camjaywilson
