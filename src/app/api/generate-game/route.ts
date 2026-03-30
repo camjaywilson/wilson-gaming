@@ -1,5 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { NextRequest, NextResponse } from 'next/server';
+import { saveGame } from '@/lib/gameStore';
 
 const client = new Anthropic();
 
@@ -59,7 +60,14 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'AI did not return valid HTML' }, { status: 500 });
     }
 
-    return NextResponse.json({ html: gameHtml });
+    const game = saveGame({
+      id: Date.now().toString(),
+      prompt: prompt.trim(),
+      html: gameHtml,
+      createdAt: Date.now(),
+    });
+
+    return NextResponse.json({ html: gameHtml, id: game.id });
   } catch (error) {
     console.error('Game generation error:', error);
     return NextResponse.json(

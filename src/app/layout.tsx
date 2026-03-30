@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import Script from 'next/script';
 import './globals.css';
 
 const geistSans = localFont({
@@ -18,6 +19,8 @@ export const metadata: Metadata = {
   description: 'Kids AI game creation platform. Describe any game and AI builds it for you!',
 };
 
+const adClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,6 +28,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {adClient && (
+          <Script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adClient}`}
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        )}
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
     </html>
   );
